@@ -1,0 +1,8 @@
+data/
+work/
+__pycache__/
+*.py[cod]
+.idea/
+.env
+.env.*
+2026-10-14/
