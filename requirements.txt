@@ -1,0 +1,5 @@
+cryptography>=43,<51
+zstandard>=0.23,<1
+Pillow>=9.1,<13
+imageio-ffmpeg>=0.6,<1
+tokenizers>=0.22,<0.24
