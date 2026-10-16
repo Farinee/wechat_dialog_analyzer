@@ -1,0 +1,38 @@
+WeChat Memory includes a database-reader component from:
+https://github.com/fanyuantaier/wechatauto-replica
+Retrieved: 2026-10-14
+License: Apache License 2.0 (see LICENSE-wechat-reader.txt)
+Original db.py SHA256: 1B8958A0E9A3F8D6C2F8FE89ACD72C14BB542C3C16635C31B52E05C0F19B247B
+
+Adaptations:
+- Only the database reader is included. The original package initializer,
+  sending functions and UI/process-writing automation are not included.
+- A minimal strict logger reports partial/stale snapshot warnings as errors.
+- A subclass keeps database keys encrypted with Windows DPAPI in the app's data
+  directory instead of upstream plaintext key caches.
+- Decrypted snapshots are placed in temporary app-owned cache directories and
+  removed after each operation.
+- Group selection, indexing, DeepSeek retrieval and the desktop interface are
+  implemented separately by WeChat Memory.
+
+Image decryption subset additionally derived from wechatauto-replica/media.py:
+Retrieved: 2026-10-15
+Source SHA256: 05211e2d8285c973eb314616a0226865917054cc746124e38257ac8742eb159f
+Only read-only key probing and decryption are retained in image_crypto.py.
+UI interaction, sending, media downloads and blocking user-monitor loops are omitted.
+Image keys are persisted through the application's DPAPI adapter.
+
+This is a Python source project. It runs on the user's existing Python/Tcl/Tk
+installation and requires cryptography (with cffi), zstandard, Pillow and
+imageio-ffmpeg (including its FFmpeg binary). No Python
+runtime or PyInstaller bootloader is distributed with this source project.
+Dependency licenses remain applicable to the installed dependencies.
+
+DeepSeek local tokenizer data:
+Source: https://github.com/deepseek-ai/deepseek-recipe/tree/main/static/tokenizers
+Retrieved: 2026-10-15
+Bundled files: resources/tokenizers/v4/tokenizer.json and v41/tokenizer.json.
+SHA-256 and provenance are preserved in each directory's README.md.
+License: MIT, Copyright (c) 2023 DeepSeek; complete notice is preserved at
+resources/tokenizers/LICENSE. These are tokenizer data, not model weights.
+Token counting uses the installed Hugging Face tokenizers Python package.

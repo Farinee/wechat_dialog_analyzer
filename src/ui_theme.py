@@ -4,6 +4,7 @@ from fluent_widgets import FluentElements,apply_window_style
 
 APP_NAME="微信聊天分析助手"
 DECODE_LABEL="聊天解码并储存"
+ANALYSIS_MODE_LABELS={"rag":"RAG 检索","full":"全文分析"}
 COLORS={"canvas":"#f3f3f3","surface":"#ffffff","ink":"#242424","muted":"#616161",
     "accent":"#0f6cbd","hover":"#115ea3","pressed":"#0f548c","tint":"#e8f2fc",
     "border":"#e5e5e5","soft":"#fafafa","disabled":"#f5f5f5"}
